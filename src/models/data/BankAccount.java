@@ -3,7 +3,7 @@ package models.data;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BankAccount {
-    protected static AtomicInteger count = new AtomicInteger(0);
+    protected static final AtomicInteger count = new AtomicInteger(0);
     protected int id;
     protected float balance;
 
