@@ -1,5 +1,7 @@
 package company;
 
+import java.math.BigDecimal;
+
 public class BaseEmployee {
     protected String name;
     protected float nbWorkedHours;
@@ -39,15 +41,15 @@ public class BaseEmployee {
         this.overtimePayingRate = overtimePayingRate;
     }
 
-    public float getSalary() {
+    public float getOvertimeHourlySalary() {
+        return hourlySMICSalary * (1 + overtimePayingRate / 100 );
+    }
+
+    public BigDecimal getSalary() {
         float weekSalary = hourlySMICSalary * 40;
         if (this.getOvertimeHours() > 0) {
             weekSalary += (this.getOvertimeHourlySalary() * this.getOvertimeHours());
         }
-        return weekSalary;
-    }
-
-    public float getOvertimeHourlySalary() {
-        return hourlySMICSalary * (1 + overtimePayingRate / 100 );
+        return new BigDecimal(weekSalary).setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 }

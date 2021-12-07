@@ -6,5 +6,3 @@ E
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 S
 #src/models/data/SavingsAccount.java,8/4/8441b694498dd072f9c0f9ffd31b853459784fe8
-S
-#src/models/data/ChargedAccount.java,d/7/d777c03f98f29d76079efdf579e096164a7e8026

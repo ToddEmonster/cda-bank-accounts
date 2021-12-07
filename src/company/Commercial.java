@@ -1,32 +1,39 @@
 package company;
 
-public class Commercial extends BaseEmployee {
-    private float fixedSalary;
-    private float turnover;
+import java.math.BigDecimal;
 
-    public Commercial(String name, float fixedSalary) {
+public class Commercial extends BaseEmployee {
+    private double fixedSalary;
+    private double turnover;
+
+    public Commercial(String name) {
+        this(name, 1200);
+    }
+
+    public Commercial(String name, double fixedSalary) {
         super(name);
         this.fixedSalary = fixedSalary;
     }
 
-    public float getFixedSalary() {
+    public double getFixedSalary() {
         return fixedSalary;
     }
 
-    public void setFixedSalary(float fixedSalary) {
+    public void setFixedSalary(double fixedSalary) {
         this.fixedSalary = fixedSalary;
     }
 
-    public float getTurnover() {
+    public double getTurnover() {
         return turnover;
     }
 
-    public void setTurnover(float turnover) {
+    public void setTurnover(double turnover) {
         this.turnover = turnover;
     }
 
     @Override
-    public float getSalary() {
-        return this.fixedSalary + (turnover * 0.01F);
+    public BigDecimal getSalary() {
+        double totalSalary = this.fixedSalary + (turnover * 0.01);
+        return new BigDecimal(totalSalary).setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 }
