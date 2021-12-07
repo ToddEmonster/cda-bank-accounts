@@ -5,6 +5,11 @@ import models.data.SavingsAccount;
 public class Main {
 
     public static void main(String[] args) {
+        // testBank();
+        testEmployee();
+    }
+
+    private static void testBank() {
         BankAccount bankAccount = new BankAccount();
         SavingsAccount savingsAccount = new SavingsAccount();
         ChargedAccount chargedAccount = new ChargedAccount();
@@ -22,5 +27,9 @@ public class Main {
         System.out.println(bankAccount);
         System.out.println(savingsAccount);
         System.out.println(chargedAccount);
+    }
+
+    private static void testEmployee() {
+
     }
 }
